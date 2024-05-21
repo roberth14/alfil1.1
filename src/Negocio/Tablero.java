@@ -249,11 +249,7 @@ public class Tablero {
                 tableroMatriz[i][j] = 'A';
                 borrarDiagonales();
                 marcarDiag(i, j);
-                if (peon.getJ_peon() < alfil.getJ_alfil() && i > 2) {
-                    borrarDiag(i, j);
-                    break;
-                }
-
+ 
                 if (!direccionPeon) {
                     if (peon.getI_peon() == 7 && i > 0 && tableroMatriz[i - 1][j] == '-' || peon.getI_peon() == 7 && i == 0 || tableroMatriz[peon.getI_peon() + 1][peon.getJ_peon()] == '-' && i > 0 && tableroMatriz[i - 1][j] == '-' || tableroMatriz[peon.getI_peon() + 1][peon.getJ_peon()] == '-' && i == 0) {
                         alfil.setI_alfil(i);
@@ -304,10 +300,6 @@ public class Tablero {
                 tableroMatriz[i][j] = 'A';
                 borrarDiagonales();
                 marcarDiag(i, j);
-                if (peon.getJ_peon() < alfil.getJ_alfil() && i > 2) {
-                    borrarDiag(i, j);
-                    break;
-                }
                 System.out.println("TERCERO");
 
                 if (!direccionPeon) {
@@ -334,10 +326,7 @@ public class Tablero {
                 tableroMatriz[i][j] = 'A';
                 borrarDiagonales();
                 marcarDiag(i, j);
-                if (peon.getJ_peon() > alfil.getJ_alfil() && i > 2) {
-                    borrarDiag(i, j);
-                    break;
-                }
+
                 System.out.println("CUARTO");
                 if (!direccionPeon) {
                     if (peon.getI_peon() == 7 && i > 0 && tableroMatriz[i - 1][j] == '-' || peon.getI_peon() == 7 && i == 0 || tableroMatriz[peon.getI_peon() + 1][peon.getJ_peon()] == '-' && i > 0 && tableroMatriz[i - 1][j] == '-' || tableroMatriz[peon.getI_peon() + 1][peon.getJ_peon()] == '-' && i == 0) {
