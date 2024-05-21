@@ -1,0 +1,41 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 18/05/2024, 4:33:26 p. m.
+    Author     : Yieison
+*/
+
+/* Estilo para los botones */
+.button {
+    -fx-background-color: rgba(0, 115, 230, 0.7); /* Azul transparente */
+    -fx-text-fill: white;
+    -fx-font-size: 10pt;
+    -fx-padding: 7px;
+    -fx-background-radius: 20px; /* Esquinas redondeadas */
+    -fx-cursor: hand; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.button:hover {
+    -fx-background-color: rgba(0, 115, 230, 0.9); /* Azul más opaco al pasar el mouse */
+}
+
+.label-title {
+    -fx-font-size: 24pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-alignment: CENTER;
+}
+
+.label-footer {
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.grid-cell {
+    -fx-border-color: black;
+    -fx-background-color: lightgray;
+}
