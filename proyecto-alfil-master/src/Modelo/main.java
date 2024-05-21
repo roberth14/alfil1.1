@@ -1,7 +1,7 @@
-package Modelo;
+/*package Modelo;
 
 import Negocio.Tablero;
-
+//
 public class main {
 
     public static void main(String[] args) {
@@ -14,4 +14,4 @@ public class main {
 
     
 }
-
+*/

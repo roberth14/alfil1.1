@@ -2,7 +2,7 @@ package Negocio;
 
 import Modelo.Alfil;
 import Modelo.Peon;
-//import Util.PDFGenerator;
+import Util.PDFGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,7 +117,7 @@ public class Tablero {
             if (i_peon == 7) {
                 imprimirMatriz();
                 System.out.println("GANA EL PEÓN BLANCO");
-                //PDFGenerator.generarPDF("src/resources/reporte_partida_ajedrez.pdf", table, movimientos);
+                PDFGenerator.generarPDF("src/resources/reporte_partida_ajedrez.pdf", table, movimientos);
                 return true;
             } else {
                 if (i_alfil == i_peon + 1 && j_alfil == j_peon - 1 || i_alfil == i_peon + 1 && j_alfil == j_peon + 1) {
@@ -126,7 +126,7 @@ public class Tablero {
                     posicionarPeon();
                     imprimirMatriz();
                     System.out.println("GAME OVER, EL PEÓN SE COMIÓ AL ALFIL");
-                    //PDFGenerator.generarPDF("src/resources/reporte_partida_ajedrez.pdf", table, movimientos);
+                    PDFGenerator.generarPDF("src/resources/reporte_partida_ajedrez.pdf", table, movimientos);
                     return true;
                 } else {
                     if (i_peon + 1 == i_alfil && j_peon == j_alfil) {
@@ -149,7 +149,7 @@ public class Tablero {
                         posicionarAlfil();
                         imprimirMatriz();
                         System.out.println("GAME OVER, EL ALFIL SE COMIÓ AL PEÓN");
-                        //PDFGenerator.generarPDF("src/resources/reporte_partida_ajedrez.pdf", table, movimientos);
+                        PDFGenerator.generarPDF("src/resources/reporte_partida_ajedrez.pdf", table, movimientos);
                         return true;
                     }
 
@@ -161,7 +161,7 @@ public class Tablero {
             if (i_peon == 0) {
                 System.out.println("GANA EL PEÓN NEGRO");
                 imprimirListaMatrices();
-                //PDFGenerator.generarPDF("src/resources/reporte_partida_ajedrez.pdf", table, movimientos);
+                PDFGenerator.generarPDF("src/resources/reporte_partida_ajedrez.pdf", table, movimientos);
                 return true;
             } else {
                 if (!proximoMovimientoAlfil()) {
@@ -170,7 +170,7 @@ public class Tablero {
                     posicionarAlfil();
                     imprimirMatriz();
                     System.out.println("GAME OVER, EL ALFIL SE COMIÓ AL PEÓN");
-                    //PDFGenerator.generarPDF("src/resources/reporte_partida_ajedrez.pdf", table, movimientos);
+                    PDFGenerator.generarPDF("src/resources/reporte_partida_ajedrez.pdf", table, movimientos);
                     return true;
                 } else {
                     if (i_alfil == i_peon - 1 && j_alfil == j_peon - 1 || i_alfil == i_peon + 1 && j_alfil == j_peon + 1) {
@@ -180,7 +180,7 @@ public class Tablero {
                         imprimirMatriz();
                         imprimirListaMatrices();
                         System.out.println("GAME OVER, EL PEÓN SE COMIÓ AL ALFIL");
-                        //PDFGenerator.generarPDF("src/resources/reporte_partida_ajedrez.pdf", table, movimientos);
+                        PDFGenerator.generarPDF("src/resources/reporte_partida_ajedrez.pdf", table, movimientos);
                         return true;
                     } else {
                         if (i_peon - 1 == i_alfil && j_peon == j_alfil) {
@@ -249,11 +249,7 @@ public class Tablero {
                 tableroMatriz[i][j] = 'A';
                 borrarDiagonales();
                 marcarDiag(i, j);
-                if (peon.getJ_peon() < alfil.getJ_alfil() && i > 2) {
-                    borrarDiag(i, j);
-                    break;
-                }
-
+ 
                 if (!direccionPeon) {
                     if (peon.getI_peon() == 7 && i > 0 && tableroMatriz[i - 1][j] == '-' || peon.getI_peon() == 7 && i == 0 || tableroMatriz[peon.getI_peon() + 1][peon.getJ_peon()] == '-' && i > 0 && tableroMatriz[i - 1][j] == '-' || tableroMatriz[peon.getI_peon() + 1][peon.getJ_peon()] == '-' && i == 0) {
                         alfil.setI_alfil(i);
@@ -304,10 +300,6 @@ public class Tablero {
                 tableroMatriz[i][j] = 'A';
                 borrarDiagonales();
                 marcarDiag(i, j);
-                if (peon.getJ_peon() < alfil.getJ_alfil() && i > 2) {
-                    borrarDiag(i, j);
-                    break;
-                }
                 System.out.println("TERCERO");
 
                 if (!direccionPeon) {
@@ -334,10 +326,7 @@ public class Tablero {
                 tableroMatriz[i][j] = 'A';
                 borrarDiagonales();
                 marcarDiag(i, j);
-                if (peon.getJ_peon() > alfil.getJ_alfil() && i > 2) {
-                    borrarDiag(i, j);
-                    break;
-                }
+
                 System.out.println("CUARTO");
                 if (!direccionPeon) {
                     if (peon.getI_peon() == 7 && i > 0 && tableroMatriz[i - 1][j] == '-' || peon.getI_peon() == 7 && i == 0 || tableroMatriz[peon.getI_peon() + 1][peon.getJ_peon()] == '-' && i > 0 && tableroMatriz[i - 1][j] == '-' || tableroMatriz[peon.getI_peon() + 1][peon.getJ_peon()] == '-' && i == 0) {
